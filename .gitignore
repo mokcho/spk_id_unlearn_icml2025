@@ -14,7 +14,7 @@ events*
 *.zip
 *.png
 *.npy
-*.txt
 *.json
+*.DS_Store
 outputs/
 src/speaker_verification/
