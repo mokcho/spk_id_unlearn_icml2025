@@ -1,6 +1,5 @@
 *pycache*
 events*
-*.json
 *.wav
 *.pt
 *.log
@@ -14,7 +13,6 @@ events*
 *.zip
 *.png
 *.npy
-*.json
 *.DS_Store
 outputs/
 src/speaker_verification/
