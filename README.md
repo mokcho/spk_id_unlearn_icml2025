@@ -5,11 +5,16 @@ TaeSoo Kim<sup>\*</sup>, Jinju Kim<sup>\*</sup>, Dong Chan Kim, Jong Hwan Ko<sup
 <sup>\*</sup> Equal contribution  
 <sup>†</sup> Corresponding author
 
-This repository provides the official implementation of our paper | [Do Not Mimic My Voice : Speaker Identity Unlearning for Zero-Shot Text-to-Speech](https://openreview.net/forum?id=1EgFJDjodU&noteId=YjSUaQDacr)
+This repository provides the official implementation of : [Do Not Mimic My Voice : Speaker Identity Unlearning for Zero-Shot Text-to-Speech](https://openreview.net/forum?id=1EgFJDjodU&noteId=YjSUaQDacr)
 
 Poster | [ICML 2025](https://icml.cc/virtual/2025/poster/46647) 
 
 #Voice Privacy #Zero-Shot TTS #Machine Unlearning #Speaker Identity Unlearning #ICML2025
+
+## Updates
+
+- Nov 3rd '25 : Our evaluation code is available!
+- This work will be presented in NeurIPS 2025 GenProCC Workshop!
 
 ## Overview
 
@@ -37,10 +42,12 @@ We also propose a novel evaluation metric : speaker-Zero Retrain Forgetting (spk
 
 6. Evaluation with spk-ZRF
 
-
 ## 1. Installation & Requirements
 
-For training, prepare your pre-trained ZS-TTS model. In the paper, we use VoiceBox. We do not make our pre-trained model weights or training code public as per [the Ethics Statement of VoiceBox's original authors](https://voicebox.metademolab.com/) due to risks of misuse.
+For training, prepare your pre-trained ZS-TTS model. 
+
+In the paper, we use VoiceBox. We do not make our pre-trained model weights or training code public as per [the Ethics Statement of VoiceBox's original authors](https://voicebox.metademolab.com/) due to risks of misuse. **Please email the authors for extension of this work.**
+
 You should modify the codes in this repository to work with desired ZS-TTS model.
 
 ## 2. Dataset
