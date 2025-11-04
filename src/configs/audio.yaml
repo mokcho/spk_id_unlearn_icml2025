@@ -1,0 +1,11 @@
+sampling_rate : 16000
+hop_size : 160
+win_size : 640
+window : "hann"
+fft_size : 1024
+n_freq : 1025
+num_mels : 80
+fmin : 0
+fmax : 8000
+mean : -5.884
+std_dev : 2.261
