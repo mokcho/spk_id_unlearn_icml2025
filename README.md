@@ -46,7 +46,7 @@ We also propose a novel evaluation metric : speaker-Zero Retrain Forgetting (spk
 
 For training, prepare your pre-trained ZS-TTS model. 
 
-In the paper, we use VoiceBox. We do not make our pre-trained model weights or training code public as per [the Ethics Statement of VoiceBox's original authors](https://voicebox.metademolab.com/) due to risks of misuse. **Please email the authors for extension of this work.**
+In the paper, we use VoiceBox. We do not make our pre-trained model weights or training code public as per [the Ethics Statement of VoiceBox's original authors](https://voicebox.metademolab.com/) due to risks of misuse. **Please email [Jinju Kim](https://mokcho.github.io/) for extension of this work.**
 
 You should modify the codes in this repository to work with desired ZS-TTS model.
 
