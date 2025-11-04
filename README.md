@@ -22,13 +22,8 @@ Poster | [ICML 2025](https://icml.cc/virtual/2025/poster/46647)
 
 The rapid advancements of Zero-Shot Text-to-Speech (ZS-TTS) technology has enabled high-fidelity voice synthesis from minimal audio cues, raising significant privacy and ethical concerns. Despite growing privacy concerns in speech-related tasks, there is still no method to effectively unlearn the ability to generate speech in a specific speaker's voice. We address the new challenge of Speaker Identity Unlearning - when a system provider for pre-trained ZS-TTS receives an unlearning request from a speaker, we incorporate our proposed guided unlearning frameworks that guide random generation while retaining performance on remain identities.
 
-
-![](fig/unlearning.png)
-
 To meet this goal, we propose the first machine unlearning frameworks for ZS-TTS : Teacher-Guided Unlearning (TGU), Sample-Guided Unlearning (SGU).
-Designed to ensure the model forgets designated speaker identities while retaining its ability to generate accurate speech for other speakers, our proposed methods incorporate randomness to prevent replication of forget speakers' voices and assure unlearned identities remain untraceable.
-We also propose a novel evaluation metric : speaker-Zero Retrain Forgetting (spk-ZRF). This assesses the model's ability to disregard prompts associated with forgotten speakers via randomness in voice generation. Assessing randomness, we can evaluate how effectively the unlearned model prevents reverse engineering attacks that could expose a speaker's identity.
-
+We also propose a novel evaluation metric : speaker-Zero Retrain Forgetting (spk-ZRF). 
 
 ## Table of Contents
 
