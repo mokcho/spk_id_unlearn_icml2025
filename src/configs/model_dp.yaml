@@ -1,0 +1,11 @@
+phn_dim : 256 # = num_mels
+dim : 512
+n_layers : 8
+n_heads : 8
+head_dim : 64
+n_kv_heads : 8
+ff_multiplier : 4
+dropout : 0.1
+conv_pos_width : 15
+conv_pos_groups : 16
+conv_pos_depth : 2

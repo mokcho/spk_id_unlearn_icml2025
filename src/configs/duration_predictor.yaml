@@ -1,0 +1,32 @@
+proj_dir : "./results/duration_predictor_LH"
+train_filelist : "./filelists/libriheavy_filelist.json"
+val_filelist : "./filelists/libriheavy_val_filelist.json"
+
+audio_root_path : "/data/libriheavy/train/large/"
+textgrid_root_path : "/data/libriheavy/TextGrid/train/large/"
+
+train :
+  batch_size : 128
+  grad_accum : 1
+  num_workers : 32
+  fp16 : True
+  lr : 1e-4
+  max_grad_norm : 0.2
+  train_steps : 600000
+  warmup_steps : 5000
+  ema_decay : 0.9999
+  # Masking Strategy
+  mask_ratio : [0.7, 1.0]
+  mask_len : 10 # frames
+  prob_cond : 0.9
+  # logging
+  log_interval : 1000
+  save_interval : 50000
+  resume : True
+  resume_from : 'latest'
+
+
+model :
+  cfg_path : "./configs/model_dp.yaml"
+  phn_dim : 256
+  regression : False
