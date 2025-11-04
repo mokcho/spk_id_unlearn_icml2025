@@ -141,18 +141,16 @@ def calc_wer(eval_filelist_fp, audio_root_path, textgrid_root_path, audio_cfg = 
         _, tgt_textgrid_fp = get_audio_textgrid_path(tgt_data, audio_root_path, textgrid_root_path)
         _, tgt_transcript = get_phoneme_frome_textgrid(tgt_textgrid_fp, return_transcript=True)
 
-
-        tgt_audios = []
-        n = 3
-        for i in range(n) :
-            tgt_audio_fp, tgt_textgrid_fp = src_audio_fp.replace("src",f"{i}"), src_textgrid_fp
-            if os.path.exists(tgt_audio_fp) :
-                tgt_mel, tgt_phn_expanded, tgt_phn_ids, tgt_phn_durations = process_prompt(to_mel, tgt_audio_fp, tgt_textgrid_fp, device)
-
-        gt_wav = torch.from_numpy(sample_audio(src_audio_fp)).float().unsqueeze(0)
-        gen_wav = torch.from_numpy(sample_audio(tgt_audio_fp)).float().unsqueeze(0)
-
-        gen_wav_np = [wav for wav in gen_wav.squeeze(0).cpu().numpy()]
+        i=0 # this should really be a parameter to evaluate for multiple seeds
+        tgt_audio_fp, tgt_textgrid_fp = src_audio_fp.replace("src",f"{i}"), src_textgrid_fp
+        
+        try : 
+            gen_wav = torch.from_numpy(sample_audio(tgt_audio_fp)).float().unsqueeze(0) # torch.Size ([1, 160800])
+        except :
+            continue
+        
+        gen_wav_np = gen_wav.cpu().numpy()
+        
             
         with torch.no_grad():
             input_values = asr_processor([gen_wav_np], sampling_rate=16000, return_tensors="pt").input_values  # Batch size 1
@@ -174,7 +172,6 @@ def calc_wer(eval_filelist_fp, audio_root_path, textgrid_root_path, audio_cfg = 
 
         n_select = 1
         wer_indices = heapq.nsmallest(n_select, range(len(wer_errors)), key=wer_errors.__getitem__)
-        # wer_indices = [0]
         word_error = [wer_errors[i] for i in wer_indices]
         word_error = np.mean(np.array(word_error))
 

@@ -166,8 +166,6 @@ if __name__ == "__main__" :
                 
             # if no CSV file, use audio
         else : 
-            
-            raise NotImplementedError
 
             assert args.eval_filelist_fp is not None, "Please provide eval_filelist_fp for WER calculation."
             assert args.textgrid_root_path is not None, "Please provide textgrid_root_path for WER calculation."
